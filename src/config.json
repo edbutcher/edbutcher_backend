@@ -1,0 +1,5 @@
+{
+    "MONGO_DATABASE_NAME": "edbutcherDB",
+    "MONGO_URL": "mongodb://localhost:27017",
+    "UPLOAD_FOLDER": "uploads/"
+}
