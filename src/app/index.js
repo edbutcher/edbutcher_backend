@@ -5,21 +5,14 @@ const logger = require('koa-morgan')
 const responseTime = require('koa-response-time')
 const database = require('database')
 
-const path = require('path');
-console.log(__dirname)
-
 const app = new Koa()
-app.use(responseTime())
-app.use(logger('combined'))
-app.use(koaBody({
-  multipart: true,
-  uploadDir: __dirname,
-  keepExtensions: true
-}))
-app.use(router.routes())
-app.use(ctx => {
-  ctx.type = 'json'
-})
+
+app
+  .use(responseTime())
+  .use(logger('combined'))
+  .use(koaBody())
+  .use(router.routes())
+  .use(ctx => ctx.type = 'json')
 
 exports.start = async () => {
   try {
