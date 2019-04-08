@@ -1,17 +1,17 @@
-const mongoose = require('mongoose')
-const config = require('configuration')
+const mongoose = require('mongoose');
+const config = require('configuration');
 
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 
-const url = config.get('MONGO_URL')
-const db = config.get('MONGO_DATABASE_NAME')
+const url = config.get('MONGO_URL');
+const db = config.get('MONGO_DATABASE_NAME');
 
 exports.connect = () => {
   return new Promise((resolve, reject) => {
-    mongoose.connect(`${url}/${db}`, { useNewUrlParser: true })
+    mongoose.connect(`${url}/${db}`, { useNewUrlParser: true });
 
-    const connection = mongoose.connection
-    connection.on('error', reject)
-    connection.once('open', resolve)
+    const connection = mongoose.connection;
+    connection.on('error', reject);
+    connection.once('open', resolve);
   })
-}
+};

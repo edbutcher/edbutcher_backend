@@ -8,11 +8,15 @@
     "start": "NODE_PATH=src node index.js"
   },
   "dependencies": {
+    "@koa/cors": "^2.2.3",
     "koa": "^2.6.2",
-    "koa-body": "^4.0.4",
+    "koa-body": "^4.1.0",
     "koa-morgan": "^1.0.1",
+    "koa-mount": "^4.0.0",
     "koa-response-time": "^2.0.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-static-middleware": "^1.0.3",
     "mongoose": "^5.3.13"
   },
   "devDependencies": {

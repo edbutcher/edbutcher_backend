@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
-const { Schema } = require('mongoose')
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 
 const GallerySchema = new Schema({
-  file_name: {
+  name: {
     type: String,
     required: true
   },
@@ -13,13 +13,9 @@ const GallerySchema = new Schema({
   src: {
     type: String,
     required: true
-  },
-  prev_src: {
-    type: String,
-    required: true
   }
-})
+});
 
-const Gallery = mongoose.model('Gallery', GallerySchema)
+const Gallery = mongoose.model('Gallery', GallerySchema);
 
-module.exports = Gallery
+module.exports = Gallery;

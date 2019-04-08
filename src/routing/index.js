@@ -1,9 +1,8 @@
-const router = require('koa-router')()
-const users = require('api/users/routes')
-const gallery = require('api/gallery/routes')
+const Router = require('koa-router');
+const gallery = require('api/gallery/routes');
 
-// temporary solution
-router.use('/users', users)
-router.use('/gallery', gallery)
+const router = new Router();
 
-module.exports = router
+router.use('/', gallery);
+
+module.exports = router;
